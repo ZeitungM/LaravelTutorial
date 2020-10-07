@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Folder;
+use App\Http\Requests\CreateFolder;
 use Illuminate\Http\Request;
 
 class FolderController extends Controller
@@ -12,7 +13,7 @@ class FolderController extends Controller
         return view('folders/create');
     }
 
-    public function create(Request $request)
+    public function create(CreateFolder $request)
     {
         $folder = new Folder();
         $folder->title = $request->title;
