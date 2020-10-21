@@ -27,6 +27,13 @@ class TaskController extends Controller
         return view( 'tasks/create', [ 'folder_id' => $folder_id ] );
     }
 
+    public function showEditForm(int $folder_id, int $task_id)
+    {
+        $task = Task::find($task_id);
+
+        return view( 'tasks/edit', [ 'task'   => $task    ] );
+    }
+
     public function create(int $folder_id, CreateTask $request)
     {
         $current_folder = Folder::find($folder_id);
