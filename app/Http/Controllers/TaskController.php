@@ -46,4 +46,17 @@ class TaskController extends Controller
         
         return redirect()->route( 'tasks.index', ['id'=>$current_folder->id, ] );
     }
+
+    public function edit(int $folder_id, int $task_id, EditTask $request)
+    {
+        $current_task = Task::find($task_id);
+ 
+        $current_task->title    = $request->title;
+        $current_task->status   = $request->status;
+        $current_task->due_date = $request->due_date;
+        
+        $current_task->save();
+        
+        return redirect()->route( 'task.index', [ 'id'=>$current_task->folder_id, ] );
+    }
 }
