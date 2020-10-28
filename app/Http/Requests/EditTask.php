@@ -40,14 +40,14 @@ class EditTask extends CreateTask
         $messages = parent::messages();
 
         // Task::STATUS に対して label キーの値を取り出す
-        $status_label = array_map(function($item){
+        $status_labels = array_map(function($item){
             return $item['label'];
         }, Task::STATUS );
 
         $status_labels = implode('、', $status_labels);
 
         return $messages + [
-            'status.in' => ':attribute には' . $status_labels. ' のいずれかを指定してください。';
+            'status.in' => ':attribute には' . $status_labels. ' のいずれかを指定してください。',
         ];
     }
 }

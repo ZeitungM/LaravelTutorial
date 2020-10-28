@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Folder;
 use App\Http\Requests\CreateTask;
+use App\Http\Requests\EditTask;
 use App\Task;
 use Illuminate\Http\Request;
 
