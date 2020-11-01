@@ -9,7 +9,7 @@
           <div class="panel-body">
             @if($errors->any())
               <div class="alert alert-danger">
-                @foreach($errors->all(() as $message)
+                @foreach($errors->all() as $message)
                   <p>{{ $message }}</p>
                 @endforeach
               </div>
