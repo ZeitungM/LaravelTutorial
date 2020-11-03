@@ -17,7 +17,7 @@
         <div class="my-navbar-control">
           @if(Auth::check())
             <!-- ログイン中 -->
-            <span class="my-navbar-item">>ようこそ, {{ Auth::user()->name }}さん</span> | 
+            <span class="my-navbar-item">ようこそ, {{ Auth::user()->name }}さん</span> | 
             <a href="#" id="logout" class="my-navbar-item">ログアウト</a>
             <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
               @csrf
@@ -33,6 +33,14 @@
     <main>
       @yield('content')
     </main>
+    @if(Auth::check())
+      <script>
+        document.getElementById('logout').addEventListener( 'click', function(event){
+          event.preventDefault();
+          document.getElementById('logout-form').submit();
+        });
+      </script>
+    @endif
     @yield('scripts')
   </body>
 </html>
