@@ -13,7 +13,7 @@
   <body>
     <header>
       <nav class="my-navbar">
-        <a class="my-navbar-brand" href="/">ToDo App</a>
+        <a class="my-navbar-brand" href="/">ToDo-App</a>
         <div class="my-navbar-control">
           @if(Auth::check())
             <!-- ログイン中 -->
